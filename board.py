@@ -6,9 +6,9 @@ class Board:
     def get_index_cuadrant(self):
         return self.__index_cuadrant
 
-    def set_value_by_index(self, value, index):
-        index = str(index)
-        self.__board = self.__board[:self.__index_cuadrant[index]] + value + self.__board[self.__index_cuadrant[index]+1:]
+    def set_value_by_quadrant(self, value, quadrant):
+        quadrant = str(quadrant)
+        self.__board = self.__board[:self.__index_cuadrant[quadrant]] + value + self.__board[self.__index_cuadrant[quadrant]+1:]
 
     def get_board(self):
       return self.__board
@@ -19,10 +19,11 @@ class Board:
 
 
 if __name__ == "__main__":
+    # Examples
     b = Board()
-    b.set_value_by_index("/", 3)
-    b.set_value_by_index("/", 5)
-    b.set_value_by_index("/", 7)
+    b.set_value_by_quadrant("/", 3)
+    b.set_value_by_quadrant("/", 5)
+    b.set_value_by_quadrant("/", 7)
     print(b.get_board())
     print("#"*17)
     b.set_reset()

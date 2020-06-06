@@ -1,15 +1,18 @@
 from board import Board
-from os import system
+
+class Game(Board):
+    def __init__(self):
+        super().__init__()
+        self.board_status = {str(k):k for k in range(1,10)}
+        print(self.board_status["2"])
 
 if __name__ == "__main__":
-    system('clear')
-    b = Board()
-    print("TicTacToe!")
+    b = Game()
     print(b.get_board())
-    print("Options: 1-9, x (to exit)")
     option = ""
-    while option.lower() != "x":
+    while True:
         option = input("You: ")
-        b.set_value_by_index("x", option)
-        system('clear')
+        if option.lower() == "x":
+            break
+        b.set_value_by_quadrant("x", option)
         print(b.get_board())
