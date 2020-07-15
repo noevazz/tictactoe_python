@@ -3,8 +3,6 @@ from board import Board
 class Game(Board):
     def __init__(self):
         super().__init__()
-        self.board_status = {str(k):k for k in range(1,10)}
-        print(self.board_status["2"])
 
 if __name__ == "__main__":
     b = Game()
@@ -14,5 +12,5 @@ if __name__ == "__main__":
         option = input("You: ")
         if option.lower() == "x":
             break
-        b.set_value_by_quadrant("x", option)
+        b.set_quadrant(option, "x")
         print(b.get_board())
