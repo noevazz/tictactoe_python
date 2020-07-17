@@ -10,11 +10,9 @@ _____|_____|_____
      |     |
   7  |  8  |  9
      |     |"""
-        self.__QUADRANTS = {self.__BOARD[i]:{"index":i, "value":i} for i in range(len(self.__BOARD)) if self.__BOARD[i].isnumeric() }
-        # self.__CUADRANTS = {'1': 15, '2': 21, '3': 27, '4': 61, '5': 67, '6': 73, '7': 108, '8': 114, '9': 120}
-        # The key represents the cuadrant
-        # The value represents its index in the string
-        print(self.__QUADRANTS)
+        self.__QUADRANTS = {self.__BOARD[i]:{"index":i, "value":i}\
+            for i in range(len(self.__BOARD)) if self.__BOARD[i].isnumeric() }
+        # 1:{'index':15, 'value':'X'}, etc
         self.__board = self.__BOARD
         self.__quadrants = self.__QUADRANTS
 
