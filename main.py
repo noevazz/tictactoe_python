@@ -40,7 +40,18 @@ class TicTacToe(Board):
                 break
     
     def check_winner(self):
-        winner_options = [[1,2,3], [4,5,6], [7,8,9], [1,4,7], [2,5,8], [3,6,9], [1,5,9], [7,5,3]]
+        """
+        Returns None if there is no winner
+        Returns "X" or "O" depends of the winner
+        """
+        winner_options = [[1,2,3], # Horizontal line #1
+                          [4,5,6], # Horizontal line #2
+                          [7,8,9], # Horizontal line #3
+                          [1,4,7], # Vertical line #1
+                          [2,5,8], # Vertical line #2
+                          [3,6,9], # Vertical line #3
+                          [1,5,9], # Backslash
+                          [7,5,3]] # Forward slash
         for option in winner_options:
             if super().get_quadrants()[ str(option[0]) ]["value"] == super().get_quadrants()[ str(option[1]) ]["value"] and \
                 super().get_quadrants()[ str(option[0]) ]["value"] == super().get_quadrants()[ str(option[2]) ]["value"]:
