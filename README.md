@@ -2,7 +2,8 @@
 
 ## Current features
 
-- Play 1 vs 1 (1 vs PC is in progress)
+- Play 1 vs 1
+- PC vs You
 
 ## Running the code
 
