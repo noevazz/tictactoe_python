@@ -15,7 +15,7 @@ class TicTacToe(Board):
             return False
     
     def play(self):
-        print(self.get_quadrants())
+        #print(self.get_quadrants())
         if self.game_mode == "1":
             self.__play_1vs1()
         elif self.game_mode == "2":
@@ -46,7 +46,7 @@ class TicTacToe(Board):
         while True:
             self.__move_player("Player 1", "x")
             if self.__check_winner() != None:
-                print("the winner is", self.__check_winner())
+                print("the winner is", "Player 2" if self.__check_winner()=="o" else "Player 1")
                 break
 
             if self.__moves == 9:
@@ -56,7 +56,7 @@ class TicTacToe(Board):
             print(super().get_board())
             self.__move_player("Player 2", "o")
             if self.__check_winner() != None:
-                print("the winner is", self.__check_winner())
+                print("the winner is", "Player 2" if self.__check_winner()=="o" else "Player 1")
                 break
             print(super().get_board())
     
@@ -66,7 +66,19 @@ class TicTacToe(Board):
             option = choice( ( [key for key, val_dict in self.get_quadrants().items() if val_dict["value"] not in ["x", "o"]] ) )
             #print( [key for key, val_dict in self.get_quadrants().items() if val_dict["value"] in ["x", "o"]] )
         else:
+            is_valid = False
+            is_available = False
             option = input(f"{player_name} [{symbol}]: ")
+            while is_valid==False:
+                if option in [str(i) for i in range(1, 10)]:
+                    is_valid = True
+                    if self.get_quadrants()[option]["value"] in ["x", "o"]:
+                        option = input(f"Oops!, that box is already filled,\n  {player_name} [{symbol}]: ")
+                        is_valid = False
+                else:
+                    option = input(f"* That's not a valid option, {player_name} [{symbol}]: ")
+                    is_valid = False
+
         super().set_quadrant(option, symbol)
         self.__moves += 1
     
