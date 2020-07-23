@@ -10,9 +10,8 @@ _____|_____|_____
      |     |
   7  |  8  |  9
      |     |"""
-        self.__QUADRANTS = {self.__BOARD[i]:{"index":i, "value":i}\
+        self.__QUADRANTS = {str(self.__BOARD[i]):{"index":i, "value":i}\
             for i in range(len(self.__BOARD)) if self.__BOARD[i].isnumeric() }
-        # 1:{'index':15, 'value':'X'}, etc
         self.__board = self.__BOARD
         self.__quadrants = self.__QUADRANTS
 
@@ -20,7 +19,6 @@ _____|_____|_____
         return self.__quadrants
 
     def set_quadrant(self, quadrant, value):
-        quadrant = str(quadrant)
         self.__board = self.__board[:self.__quadrants[quadrant]["index"]] +\
              value + self.__board[self.__quadrants[quadrant]["index"]+1:]
         self.__quadrants[quadrant]["value"] = value
