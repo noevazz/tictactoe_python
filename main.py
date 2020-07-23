@@ -67,7 +67,6 @@ class TicTacToe(Board):
             #print( [key for key, val_dict in self.get_quadrants().items() if val_dict["value"] in ["x", "o"]] )
         else:
             is_valid = False
-            is_available = False
             option = input(f"{player_name} [{symbol}]: ")
             while is_valid==False:
                 if option in [str(i) for i in range(1, 10)]:

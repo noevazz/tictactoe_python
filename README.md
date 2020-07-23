@@ -8,7 +8,9 @@
 ## Running the code
 
 ```
-$ python3 main.py
+$ python3 main.py 
+Game mode [1=1vs1, 2=PCvsYou]: 12312
+Game mode [1=1vs1, 2=PCvsYou]: dadsad
 Game mode [1=1vs1, 2=PCvsYou]: 1
      |     |
   1  |  2  |  3
@@ -19,7 +21,7 @@ _____|_____|_____
      |     |
   7  |  8  |  9
      |     |
-Player 1 [X]: 1
+Player 1 [x]: 1
      |     |
   x  |  2  |  3
 _____|_____|____
@@ -29,9 +31,14 @@ _____|_____|_____
      |     |
   7  |  8  |  9
      |     |
-Player 2 [O]: 3
+Player 2 [o]: 1
+Oops!, that box is already filled,
+  Player 2 [o]: 1
+Oops!, that box is already filled,
+  Player 2 [o]: fdsf
+* That's not a valid option, Player 2 [o]: 2
      |     |
-  x  |  2  |  O
+  x  |  o  |  3
 _____|_____|____
      |     |
   4  |  5  |  6
@@ -39,9 +46,9 @@ _____|_____|_____
      |     |
   7  |  8  |  9
      |     |
-Player 1 [X]: 5
+Player 1 [x]: 5
      |     |
-  x  |  2  |  O
+  x  |  o  |  3
 _____|_____|____
      |     |
   4  |  x  |  6
@@ -49,25 +56,16 @@ _____|_____|_____
      |     |
   7  |  8  |  9
      |     |
-Player 2 [O]: 4
+Player 2 [o]: 8
      |     |
-  x  |  2  |  O
+  x  |  o  |  3
 _____|_____|____
      |     |
-  O  |  x  |  6
+  4  |  x  |  6
 _____|_____|_____
      |     |
-  7  |  8  |  9
+  7  |  o  |  9
      |     |
-Player 1 [X]: 9
-     |     |
-  x  |  2  |  O
-_____|_____|____
-     |     |
-  O  |  x  |  6
-_____|_____|_____
-     |     |
-  7  |  8  |  x
-     |     |
-the winner is x
+Player 1 [x]: 9
+the winner is Player 1
 ```
